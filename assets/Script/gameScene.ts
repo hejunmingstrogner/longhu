@@ -694,7 +694,14 @@ export default class NewClass extends cc.Component {
  
          let bezierPath = [srcpos,cc.v2((srcpos.x + des.x) / 2,srcpos.y + 400),des]
          let bezier = cc.bezierTo(0.4,bezierPath)
-          subnode.runAction(cc.sequence(bezier,cc.callFunc(()=>{
+
+         console.log('des.x: ' + des.x + ' des.y: ' + des.y)
+
+        //  subnode.runAction( cc.jumpTo(2, des, 50,0))
+
+        //     return;
+
+          subnode.runAction(cc.sequence(cc.jumpTo(0.4,des),cc.callFunc(()=>{
  
      
                                   //    subnode.destroy()
